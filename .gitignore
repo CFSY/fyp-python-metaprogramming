@@ -1,0 +1,19 @@
+# Ignore all .venv directories
+**/.venv/
+
+# Python-specific ignores
+*.pyc
+__pycache__/
+*.py[cod]
+*$py.class
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE-specific files (add more if needed)
+.vscode/
+.idea/
+
+# Ignore any local configuration files
+*.local.conf
