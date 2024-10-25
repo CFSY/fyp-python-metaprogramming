@@ -19,3 +19,4 @@ Projects in this directory use Python virtual environments. To set up a project:
 5. Follow any additional instructions in the project's README.md
 
 Remember to deactivate the virtual environment when you're done: `deactivate`
+
