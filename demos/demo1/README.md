@@ -69,6 +69,10 @@ A simple Python-based distributed task execution system that showcases metaprogr
    - On Windows: `.venv\Scripts\activate`
    - On macOS and Linux: `source .venv/bin/activate`
 4. Install dependencies: `pip install -r requirements.txt`
+5. Install Docker Desktop:
+   - Download from [Docker](https://www.docker.com/products/docker-desktop/)
+   - Start Docker Desktop and wait for it to initialize
+   - Go to `settings > advanced > Allow the default Docker socket to be used`, ensure that it is checked (required for python docker sdk to work)
 
 ## Project Structure
 
