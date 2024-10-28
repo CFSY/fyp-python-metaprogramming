@@ -1,10 +1,11 @@
 # Distributed Task Execution System
 
-A simple Python-based distributed task execution system that showcases metaprogramming techniques.
+A simple Python-based distributed task execution system that showcases metaprogramming techniques. 
 
 ## Introduction
+At its core, the framework allows developers to define computational tasks using simple Python functions and execute them in a distributed manner. What makes this system unique is its extensive use of metaprogramming to transform these simple function definitions into fully-featured distributed tasks with minimal boilerplate code.
 
-- The framework provides a python annotation `@task` and a web interface that can be accessed by running the web app 
+- The framework provides a python decorator `@task` for users to decorate their functions with. Examples shown below:
 
   ```python
   from ..src.task.decorators import task
@@ -36,10 +37,16 @@ A simple Python-based distributed task execution system that showcases metaprogr
   if __name__ == "__main__":
       app.run_server()
   ```
-  
-- Functions annotated with `@task` are automatically detected by the framework and made available on the web interface
+- The framework also provides simple web server. When the server is run, a sophisticated chain of metaprogramming operations occur:
+  1. Creates a task class with execution metadata
+  2. Extracts type information for runtime validation
+  3. Generates custom worker code for distributed execution of tasks
+  4. Establishes communication channels between components
 
-  <img src="resource/img.png" alt="drawing" width="1000"/>
+- In practice, we can see that functions annotated with `@task` are automatically detected by the framework and made available on the web interface.
+- Note that the only user defined code is the code shown above, everything else is handled by the framework by leveraging python metaprogramming.
+
+<img src="resource/img.png" alt="drawing" width="1000"/>
   
 - The tasks can be executed through the web interface
   - The function input parameters are automatically detected and exposed on the interface
@@ -47,9 +54,16 @@ A simple Python-based distributed task execution system that showcases metaprogr
     - Thread: spins up a new thread for execution
     - Docker: spins up a new docker container for execution
 
-  <img src="resource/img_1.png" alt="drawing" width="1000"/>
+<img src="resource/img_1.png" alt="drawing" width="1000"/>
 
-- The only user defined code is shown above, everything else is handled by the framework by leveraging python metaprogramming techniques
+- In the case where the task is executed with the Docker executor, the following occurs:
+  1. Custom worker code is generated, containing only code relevant to the task being executed
+  2. Docker container orchestration configurations are generated and executed
+  3. The task is executed on the container
+  4. The web interface automatically polls for the execution results
+  5. Everything is cleaned up
+
+<img src="resource/img_2.png" alt="drawing" width="1000"/>
 
 ## Features
 
