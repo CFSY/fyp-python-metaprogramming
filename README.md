@@ -10,9 +10,8 @@
 - ### [Repository](https://github.com/CFSY/meta-reactive)
 
 ## Presentations
-- ### [CA Presentation](https://cfsy.github.io/fyp-presentations/1)
-- ### Final Presentation
-    >Coming Soon...
+- ### [CA Presentation](https://cfsy.github.io/fyp-presentations/ca)
+- ### [Final Presentation](https://cfsy.github.io/fyp-presentations/final)
 
 ## Reports
 - ### [CA Report](resources/reports/FYP_CA_Report.pdf)
